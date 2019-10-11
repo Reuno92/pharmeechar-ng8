@@ -1,0 +1,200 @@
+{
+  "users" : [
+    {
+      "id": 1,
+      "username": "test",
+      "password": "test",
+      "firstname": "tester",
+      "lastname": "tester",
+      "address": "10, rue de Quimwapoix",
+      "zipcode": "59000",
+      "city": "Lille"
+    },
+    {
+      "id": 2,
+      "username": "adurand",
+      "password": "opidfgl",
+      "firstname": "Alexandre",
+      "lastname": "Durand",
+      "address": "10, rue de perreire",
+      "zipcode": "33000",
+      "city": "Bordeaux"
+    },
+    {
+      "id": 3,
+      "username": "mGerard",
+      "password": "opdljf",
+      "firstname": "Madelaine",
+      "lastname": "Gérard",
+      "address": "52, rue de rennes",
+      "zipcode": "75006",
+      "city": "Paris"
+    }
+  ],
+  "typeProduct": [
+    {
+      "id": 1,
+      "name": "armchair"
+    },
+    {
+      "id": 2,
+      "name": "canapé"
+    },
+    {
+      "id": 3,
+      "name": "office"
+    },
+    {
+      "id": 4,
+      "name": "bed"
+    }
+  ],
+  "colors": [
+    {
+      "id": 1,
+      "name": "red"
+    },
+    {
+      "id": 2,
+      "name": "green"
+    },
+    {
+      "id": 3,
+      "name": "blue"
+    },
+    {
+      "id": 4,
+      "name": "violet"
+    },
+    {
+      "id": 5,
+      "name": "yellow"
+    },
+    {
+      "id": 6,
+      "name": "brown"
+    },
+    {
+      "id": 7,
+      "name": "beige"
+    },
+    {
+      "id": 8,
+      "name": "white"
+    },
+    {
+      "id": 9,
+      "name": "black"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Brahma",
+      "width": 82,
+      "depth": 96,
+      "height": 101,
+      "fk_color": [1, 5, 6],
+      "type" : "armchair"
+    },
+    {
+      "id": 2,
+      "name": "Vishnou",
+      "width": 82,
+      "depth": 96,
+      "height": 101,
+      "fk_color": [2, 4, 7],
+      "type" : "sofa"
+    },
+    {
+      "id": 3,
+      "name": "Shiva",
+      "width": 82,
+      "depth": 96,
+      "height": 101,
+      "fk_color": [2, 4, 7],
+      "type" : "sofa"
+    },
+    {
+      "id": 4,
+      "name": "Parvati",
+      "width": 82,
+      "depth": 96,
+      "height": 101,
+      "fk_color": [5, 8, 2],
+      "type" : "sofa"
+    },
+    {
+      "id": 5,
+      "name": "Ganesh",
+      "width": 82,
+      "depth": 96,
+      "height": 101,
+      "fk_color": [3, 5, 2],
+      "type" : "office"
+    },
+    {
+      "id": 6,
+      "name": "Hanuman",
+      "width": 82,
+      "depth": 96,
+      "height": 101,
+      "fk_color": [3, 5, 2],
+      "type" : "office"
+    },
+    {
+      "id": 7,
+      "name": "Ishana",
+      "width": 82,
+      "depth": 96,
+      "height": 101,
+      "fk_color": [3, 5, 2],
+      "type" : "office"
+    },
+    {
+      "id": 8,
+      "name": "Rāma",
+      "width": 82,
+      "depth": 96,
+      "height": 101,
+      "fk_color": [3, 5, 2],
+      "type" : "bed"
+    },
+    {
+      "id": 9,
+      "name": "Shani",
+      "width": 82,
+      "depth": 96,
+      "height": 101,
+      "fk_color": [3, 5, 2],
+      "type" : "bed"
+    },
+    {
+      "id": 10,
+      "name": "Trishiras",
+      "width": 82,
+      "depth": 96,
+      "height": 101,
+      "fk_color": [7, 8, 2],
+      "type" : "bed"
+    },
+    {
+      "id": 11,
+      "name": "Vasudeva",
+      "width": 82,
+      "depth": 96,
+      "height": 101,
+      "fk_color": [2, 3, 5],
+      "type" : "armchair"
+    },
+    {
+      "id": 12,
+      "name": "Yaksha",
+      "width": 82,
+      "depth": 96,
+      "height": 101,
+      "fk_color": [1, 2, 8],
+      "type" : "armchair"
+    }
+  ]
+}
