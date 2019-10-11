@@ -26,6 +26,7 @@ import {CatalogComponent} from './catalog/catalog.component';
 import {ProfileComponent} from './profile/profile.component';
 import {CartComponent} from './cart/cart.component';
 import {NotFoundComponent} from './template/not-found/not-found.component';
+import { UserActionComponent } from './template/layout/header/user-action/user-action.component';
 
 const APP_COMPONENTS = [
   AppComponent,
@@ -39,7 +40,8 @@ const APP_COMPONENTS = [
 @NgModule({
   declarations: [
     ...APP_COMPONENTS,
-    ...APP_CONTAINER
+    ...APP_CONTAINER,
+    UserActionComponent
   ],
   imports: [
     ...MODULES
