@@ -8,7 +8,7 @@ import {CatalogComponent} from './catalog/catalog.component';
 import {ProfileComponent} from './profile/profile.component';
 import {CartComponent} from './cart/cart.component';
 
-export const appRoutes: Routes = [
+const appRoutes: Routes = [
   {
     path: '',
     component: LayoutComponent,
@@ -24,14 +24,14 @@ export const appRoutes: Routes = [
         path: 'profile/:id',
         component: ProfileComponent,
         data: {
-          title: 'Your Profile'
+          title: 'Your profile'
         }
       },
       {
         path: 'cart',
         component: CartComponent,
         data: {
-          title: 'Cart'
+          title: 'Your cart'
         }
       },
       {
@@ -42,7 +42,7 @@ export const appRoutes: Routes = [
         }
       }
     ]
-  },
+  }
 ];
 
 @NgModule({
