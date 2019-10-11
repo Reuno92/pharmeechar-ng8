@@ -4,6 +4,7 @@
       "id": 1,
       "username": "test",
       "password": "test",
+      "type": "admin",
       "firstname": "tester",
       "lastname": "tester",
       "address": "10, rue de Quimwapoix",
@@ -14,6 +15,7 @@
       "id": 2,
       "username": "adurand",
       "password": "opidfgl",
+      "type": "customer",
       "firstname": "Alexandre",
       "lastname": "Durand",
       "address": "10, rue de perreire",
@@ -24,6 +26,7 @@
       "id": 3,
       "username": "mGerard",
       "password": "opdljf",
+      "type": "customer",
       "firstname": "Madelaine",
       "lastname": "Gérard",
       "address": "52, rue de rennes",
@@ -38,7 +41,7 @@
     },
     {
       "id": 2,
-      "name": "canapé"
+      "name": "sofa"
     },
     {
       "id": 3,
