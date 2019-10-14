@@ -34,7 +34,7 @@
       "city": "Paris"
     }
   ],
-  "typeProduct": [
+  "typeProducts": [
     {
       "id": 1,
       "name": "armchair"
