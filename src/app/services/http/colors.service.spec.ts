@@ -26,7 +26,7 @@ describe('ColorService ', () => {
             }
           });
 
-        const req = httpMock.expectOne(colorsService.colorPath + '/' + 1);
+        const req = httpMock.expectOne(colorsService.colorPath + '/' + 1, 'Search one colors with id equal 1');
         expect(req.request.method).toBe('GET');
         expect(req.cancelled).toBeFalsy();
         expect(req.request.responseType).toEqual('json');
