@@ -14,15 +14,17 @@ const headers: HttpHeaders = new HttpHeaders();
 })
 export class ColorsService {
 
-  colorPath = API_PATH.HOST + API_PATH.PORT + API_PATH.COLORS;
+  public colorPath;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.colorPath = API_PATH.HOST + API_PATH.PORT + API_PATH.COLORS;
+  }
 
-  getColors(): Observable<HttpResponse<Colors[]>> {
+  public getColors(): Observable<HttpResponse<Colors[]>> {
     return this.http.get<Colors[]>(this.colorPath, { headers, responseType: 'json', reportProgress: true, observe: 'response' });
   }
 
-  getAnColor(id): Observable<HttpResponse<Colors>> {
+  public getAnColor(id): Observable<HttpResponse<Colors>> {
     return this.http.get<Colors>(this.colorPath + '/' + id, { headers, responseType: 'json', reportProgress: true, observe: 'response' });
   }
 }

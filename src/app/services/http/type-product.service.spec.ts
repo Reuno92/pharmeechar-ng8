@@ -12,9 +12,9 @@ describe('TypeProduct', () => {
     });
   });
 
-  it('should return an httpResponse Array of TypeProduct', inject(
+  it('should return an httpResponse Array of TypProduct', inject(
     [HttpTestingController, TypeProductService],
-    (httpMock: HttpTestingController, typeProdutService: TypeProductService) => {
+    (httpMock: HttpTestingController, typeProductService: TypeProductService) => {
         const mockTypeProducts = [
           {
             "id": 1,
@@ -34,7 +34,7 @@ describe('TypeProduct', () => {
           }
         ];
 
-        TypeProductService.getAllRef()
+      typeProductService.getAllRef()
           .subscribe( (event: HttpEvent<any>) => {
             switch (event.type) {
               case HttpEventType.Response:
@@ -42,7 +42,7 @@ describe('TypeProduct', () => {
             }
           });
 
-        const req = httpMock.expectOne(TypeProductService.typeProductPath, 'Search all type of product');
+        const req = httpMock.expectOne(typeProductService.typeProductPath, 'Search all type of product');
 
         expect(req.request.method).toBe('GET');
         expect(req.cancelled).toBeFalsy();
@@ -55,10 +55,10 @@ describe('TypeProduct', () => {
 
   it('should return an httpResponse of TypeProduct with one parameter 3.', inject(
     [HttpTestingController, TypeProductService],
-    (httpMock: HttpTestingController, typeProdutService: TypeProductService) => {
-      const mockTypeProduct = { "id": 3, "name": "office" };
+    (httpMock: HttpTestingController, typeProductService: TypeProductService) => {
+      const mockTypeProduct = { 'id': 3, 'name': "office" };
 
-      TypeProductService.getSingleRef(3)
+      typeProductService.getSingleRef(3)
         .subscribe( (event: HttpEvent<any>) => {
           switch (event.type) {
             case HttpEventType.Response:
@@ -66,7 +66,9 @@ describe('TypeProduct', () => {
           }
         });
 
-      const req = httpMock.expectOne(TypeProductService.typeProductPath, 'Search the third type of product');
+      const req = httpMock.expectOne(
+        typeProductService.typeProductPath + '/' + 3,
+        'Search the third type of product');
 
       expect(req.request.method).toBe('GET');
       expect(req.cancelled).toBeFalsy();
