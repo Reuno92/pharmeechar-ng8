@@ -47,6 +47,7 @@ describe('TypeProduct', () => {
         expect(req.request.method).toBe('GET');
         expect(req.cancelled).toBeFalsy();
         expect(req.request.responseType).toBe('json');
+
         req.flush(mockTypeProducts);
 
         httpMock.verify();
