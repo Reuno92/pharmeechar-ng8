@@ -16,8 +16,11 @@ export class UsersService {
 
   constructor(private http: HttpClient) {}
 
+  /**
+   * Get on User by id
+   * @param id
+   */
   public getSingleUser(id): Observable<HttpResponse<Users>> {
-    console.log(this.userPath + '/' + id);
     return this.http.get<Users>(this.userPath + '/' + id,
       {
         headers: this.header,
@@ -28,6 +31,9 @@ export class UsersService {
     );
   }
 
+  /**
+   * Get all Users
+   */
   public getAllUsers(): Observable<HttpResponse<Users>> {
     return this.http.get<Users>( this.userPath,
       {
@@ -39,14 +45,26 @@ export class UsersService {
     );
   }
 
-  public getUserAccess() {}
+  /**
+   * Get User Access by username and password
+   */
+  public getUserAccess(username: string, password: string) {}
 
-  public getUserPermission() {}
+  /**
+   * Get User permission for access at critical page or functionality
+   * @Param id
+   */
+  public getUserPermission(id) {}
 
+  /**
+   * Create a new User
+   */
   public setUser() {}
 
-  public updateUser() {}
-
-  public deleteUser() {}
+  /**
+   *  Modify an User
+   *  @Param id
+   */
+  public updateUser(id) {}
 
 }
