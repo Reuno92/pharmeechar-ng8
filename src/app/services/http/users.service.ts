@@ -18,7 +18,7 @@ export class UsersService {
 
   /**
    * Get on User by id
-   * @param id
+   * @Param id
    */
   public getSingleUser(id): Observable<HttpResponse<Users>> {
     return this.http.get<Users>(this.userPath + '/' + id,
