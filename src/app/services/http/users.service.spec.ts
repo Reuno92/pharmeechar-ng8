@@ -15,7 +15,7 @@ describe('UsersService', () => {
   it('should return an httpResponse for display an user', inject(
     [HttpTestingController, UsersService],
     (httpMock: HttpTestingController, usersService: UsersService) => {
-      const mockUsers = {
+      const mockUser = {
         "id": 1,
         "username": "test",
         "password": "test",
@@ -29,21 +29,21 @@ describe('UsersService', () => {
         "city": "Lille"
       };
 
-      usersService.getSingleUser("test")
+      usersService.getSingleUser(1)
         .subscribe( (event: HttpEvent<any>) => {
           switch (event.type) {
             case HttpEventType.Response:
-              expect(event.body).toBe(mockUsers);
+              expect(event.body).toBe(mockUser);
           }
         });
 
-      const req = httpMock.expectOne(usersService.userPath + '/' + 'test' , 'Search an user by username');
+      const req = httpMock.expectOne(usersService.userPath + '/' + 1 , 'Search an user by username');
 
       expect(req.request.method).toBe('GET');
       expect(req.cancelled).toBeFalsy();
       expect(req.request.responseType).toBe('json');
 
-      req.flush(mockUsers);
+      req.flush(mockUser);
 
       httpMock.verify();
     }
@@ -95,8 +95,8 @@ describe('UsersService', () => {
           }
         ];
 
-        userservice.getAllUsers()
-          .subscribe( (event: HttpEvent<any>)=> {
+        usersService.getAllUsers()
+          .subscribe( (event: HttpEvent<any>) => {
             switch (event.type) {
               case HttpEventType.Response:
                 expect(event.body).toBe(mockUsers);
