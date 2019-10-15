@@ -18,7 +18,7 @@ describe('ColorService ', () => {
       (httpMock: HttpTestingController, colorsService: ColorsService) => {
         const MOCK_COLOR = {id: 1, name: 'red'};
 
-        colorsService.getAnColor(1)
+        colorsService.getSingleColor(1)
           .subscribe((event: HttpEvent<any>) => {
             switch (event.type) {
               case HttpEventType.Response:
@@ -79,7 +79,7 @@ describe('ColorService ', () => {
           }
         ];
 
-        colorsService.getColors()
+        colorsService.getAllColors()
           .subscribe( (event: HttpEvent<any>) => {
             switch (event.type) {
               case HttpEventType.Response:

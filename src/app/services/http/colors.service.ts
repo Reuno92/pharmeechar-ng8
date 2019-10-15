@@ -20,11 +20,26 @@ export class ColorsService {
     this.colorPath = API_PATH.HOST + API_PATH.PORT + API_PATH.COLORS;
   }
 
-  public getColors(): Observable<HttpResponse<Colors[]>> {
+  /**
+   * Get all Color
+   * @return Observable<HttpResponse<Colors[]>>
+   */
+  public getAllColors(): Observable<HttpResponse<Colors[]>> {
     return this.http.get<Colors[]>(this.colorPath, { headers, responseType: 'json', reportProgress: true, observe: 'response' });
   }
 
-  public getAnColor(id): Observable<HttpResponse<Colors>> {
+  /**
+   * Get a specific Color
+   * @Param id
+   * @return Observable<HttpResponse<Colors>>
+   */
+  public getSingleColor(id): Observable<HttpResponse<Colors>> {
     return this.http.get<Colors>(this.colorPath + '/' + id, { headers, responseType: 'json', reportProgress: true, observe: 'response' });
   }
+
+  /**
+   * Set a new Color
+   */
+  public setColor() {}
+
 }

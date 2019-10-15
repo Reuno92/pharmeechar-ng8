@@ -6,12 +6,13 @@ import {HttpClient} from '@angular/common/http';
 })
 export class ProductsService {
 
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient) {}
 
   /**
    * Get one product
+   * @Param id
    */
-  public getSingleProduct() {}
+  public getSingleProduct(id) {}
 
   /**
    * Get All products
@@ -30,11 +31,8 @@ export class ProductsService {
 
   /**
    * update a product
+   * @Param id
    */
-  public updateProduct() {}
+  public updateProduct(id) {}
 
-  /**
-   * Delete a products
-   */
-  public deleteProduct() {}
 }
