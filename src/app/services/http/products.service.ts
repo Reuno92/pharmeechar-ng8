@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams, HttpResponse} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Products} from '../../models/Products';
 import {API} from '../../constant/API';
@@ -35,13 +35,12 @@ export class ProductsService {
    * Get All products
    */
   public getAllProducts(): Observable<HttpResponse<Products[]>> {
-    return this.http.get<Products[]>(this.productPath,
-      {
-        headers: new HttpHeaders(),
-        responseType: 'json',
-        reportProgress: true,
-        observe: 'response'
-      });
+    return this.http.get<Products[]>(this.productPath, {
+      headers: new HttpHeaders(),
+      observe: 'response',
+      responseType: 'json',
+      reportProgress: true
+    });
   }
 
   /**
@@ -52,12 +51,30 @@ export class ProductsService {
   /**
    * Create a product
    */
-  public setProducts() {}
+  public setProduct(payload: Products): Observable<HttpResponse<Products>> {
+    return this.http.post<Products>(this.productPath,
+      payload,
+      {
+        headers: new HttpHeaders(),
+        observe: 'response',
+        responseType: 'json',
+        reportProgress: true
+      });
+  }
 
   /**
    * update a product
    * @Param id
    */
-  public updateProduct(id) {}
+  public updateProduct(id, payload): Observable<HttpResponse<Products>> {
+    return this.http.put<Products>(this.productPath + '/' + id,
+      payload,
+      {
+        headers: new HttpHeaders(),
+        observe: 'response',
+        responseType: 'json',
+        reportProgress: true
+      });
+  }
 
 }
